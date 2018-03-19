@@ -1,14 +1,13 @@
 ﻿using System.Linq;
-using DI_IoC.Library.LowLevel.LowerLevel;
 
 namespace DI_IoC.Library.LowLevel
 {
-    public class MaxFoo
+    public class MaxFoo : IFoo
     {
-	    private readonly InMemoryBar _bar;
-	    public MaxFoo()
+	    private readonly IBar _bar;
+	    public MaxFoo(IBar bar)
 	    {
-		    _bar = new InMemoryBar();
+		    _bar = bar;
 	    }
 
 	    public byte Foo()

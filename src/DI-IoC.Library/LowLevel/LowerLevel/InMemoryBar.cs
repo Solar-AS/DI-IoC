@@ -1,6 +1,6 @@
 ﻿namespace DI_IoC.Library.LowLevel.LowerLevel
 {
-	public class InMemoryBar
+	public class InMemoryBar : IBar
 	{
 		public byte[] Bar()
 		{

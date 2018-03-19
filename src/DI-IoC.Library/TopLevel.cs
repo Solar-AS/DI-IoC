@@ -1,14 +1,13 @@
 ﻿using System;
-using DI_IoC.Library.LowLevel;
 
 namespace DI_IoC.Library
 {
     public class TopLevel
     {
-	    private readonly MaxFoo _foo;
-	    public TopLevel()
+	    private readonly IFoo _foo;
+	    public TopLevel(IFoo foo)
 	    {
-		    _foo = new MaxFoo();
+		    _foo = foo;
 	    }
 
 	    public sbyte FooBar()

@@ -233,6 +233,7 @@
     <Compile Include="AutoWiring\NotSomethingElse.cs" />
     <Compile Include="AutoWiring\Something.cs" />
     <Compile Include="IoCBasics.cs" />
+    <Compile Include="Lifestyles\LifestyleTester.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

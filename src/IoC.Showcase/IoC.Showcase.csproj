@@ -225,6 +225,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoWiring\AutoWiringTester.cs" />
+    <Compile Include="AutoWiring\ICommandHandler.cs" />
+    <Compile Include="AutoWiring\ISomething.cs" />
+    <Compile Include="AutoWiring\ISomethingElse.cs" />
+    <Compile Include="AutoWiring\LibraryConvention.cs" />
+    <Compile Include="AutoWiring\NotSomethingElse.cs" />
+    <Compile Include="AutoWiring\Something.cs" />
     <Compile Include="IoCBasics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

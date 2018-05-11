@@ -1,4 +1,5 @@
 ﻿using System;
+using DI_IoC.Library.LowLevel;
 
 namespace DI_IoC.Library
 {
@@ -9,6 +10,8 @@ namespace DI_IoC.Library
 	    {
 		    _foo = foo;
 	    }
+
+		public TopLevel() : this(new MaxFoo()) { }
 
 	    public sbyte FooBar()
 	    {

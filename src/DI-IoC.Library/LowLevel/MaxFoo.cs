@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using DI_IoC.Library.LowLevel.LowerLevel;
 
 namespace DI_IoC.Library.LowLevel
 {
@@ -9,6 +10,8 @@ namespace DI_IoC.Library.LowLevel
 	    {
 		    _bar = bar;
 	    }
+
+	    public MaxFoo() : this(new InMemoryBar()) { }
 
 	    public byte Foo()
 	    {

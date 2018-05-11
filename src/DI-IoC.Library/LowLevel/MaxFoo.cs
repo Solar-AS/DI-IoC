@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using CommonServiceLocator;
 
 namespace DI_IoC.Library.LowLevel
 {
@@ -10,8 +9,6 @@ namespace DI_IoC.Library.LowLevel
 	    {
 		    _bar = bar;
 	    }
-
-	    public MaxFoo() : this(ServiceLocator.Current.GetInstance<IBar>()) { }
 
 	    public byte Foo()
 	    {

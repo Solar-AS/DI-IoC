@@ -1,5 +1,4 @@
 ﻿using System;
-using CommonServiceLocator;
 using DI_IoC.Library;
 using DI_IoC.Library.LowLevel;
 using DI_IoC.Library.LowLevel.LowerLevel;
@@ -18,16 +17,15 @@ namespace DI_IoC
 	        services.Add(new ServiceDescriptor(typeof(IFoo), typeof(MaxFoo), ServiceLifetime.Transient));
 	        services.AddTransient<TopLevel>();
 
-			ServiceLocator.SetLocatorProvider(()=> new LocatorAdapter(services.BuildServiceProvider()));
+	        services.AddSingleton<Func<string>>(_ => Console.ReadLine);
+	        services.AddSingleton(_ => Console.Out);
+	        services.AddSingleton<CompositionRoot>();
+
+			IServiceProvider provider = services.BuildServiceProvider();
 			
-			// runtime phase
-	        TopLevel top = ServiceLocator.Current.GetInstance<TopLevel>();
-
-	        sbyte fooBar = top.FooBar();
-			Console.WriteLine(fooBar);
-
-			Console.WriteLine("... press INTRO to exit ...");
-	        Console.ReadLine();
+			// runtime phase: use on composition root
+	        CompositionRoot root = provider.GetService<CompositionRoot>();
+	        root.Run();
         }
     }
 }

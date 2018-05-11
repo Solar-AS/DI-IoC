@@ -1,5 +1,4 @@
 ﻿using System;
-using CommonServiceLocator;
 
 namespace DI_IoC.Library
 {
@@ -10,8 +9,6 @@ namespace DI_IoC.Library
 	    {
 		    _foo = foo;
 	    }
-
-		public TopLevel() : this(ServiceLocator.Current.GetInstance<IFoo>()) { }
 
 	    public sbyte FooBar()
 	    {

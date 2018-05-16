@@ -254,6 +254,13 @@
     <Compile Include="AutoWiring\Something.cs" />
     <Compile Include="Delayed\DelayedTester.cs" />
     <Compile Include="Factories\FactoriesTester.cs" />
+    <Compile Include="Interception\DecorationTester.cs" />
+    <Compile Include="Interception\FakeIdentity.cs" />
+    <Compile Include="Interception\FakeQuery.cs" />
+    <Compile Include="Interception\IQuery.cs" />
+    <Compile Include="Interception\SecurityDecorator.cs" />
+    <Compile Include="Interception\TranslatorDecorator.cs" />
+    <Compile Include="Interception\UpperCasingDecorator.cs" />
     <Compile Include="IoCBasics.cs" />
     <Compile Include="Lifestyles\LifestyleTester.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

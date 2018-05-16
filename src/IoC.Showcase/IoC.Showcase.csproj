@@ -272,6 +272,7 @@
     <Compile Include="IoCBasics.cs" />
     <Compile Include="Lifestyles\LifestyleTester.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Testing\TestingTester.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

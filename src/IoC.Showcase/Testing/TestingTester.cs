@@ -25,7 +25,7 @@ namespace IoC.Showcase.Testing
 					scan.WithDefaultConventions();
 				});
 			});
-			
+
 			System.Diagnostics.Debug.WriteLine(container.WhatDoIHave());
 
 			System.Diagnostics.Debug.WriteLine(container.WhatDoIHave(typeof(Simpleton)));
@@ -42,14 +42,27 @@ namespace IoC.Showcase.Testing
 				cfg.AddTransient<I2, Two>();
 				cfg.AddSingleton<Simpleton>();
 			})
-				.AssertConfigurationIsValid();
+			.AssertConfigurationIsValid();
 
 			new Container(cfg =>
-				{
-					cfg.AddTransient<I1, One>();
-					cfg.AddSingleton<Simpleton>();
-				})
-				.AssertConfigurationIsValid();
+			{
+				cfg.AddTransient<I1, One>();
+				cfg.AddSingleton<Simpleton>();
+			})
+			.AssertConfigurationIsValid();
+		}
+
+		[Test]
+		public void UseModel_ForAssertions()
+		{
+			var container = new Container(cfg =>
+			{
+				cfg.AddTransient<I1, One>();
+				cfg.AddTransient<I2, Two>();
+				cfg.AddSingleton<Simpleton>();
+			});
+			Assert.That(container.Model.HasRegistrationFor<Simpleton>(), Is.True);
+			Assert.That(container.Model.For<Simpleton>().Default.Lifetime, Is.EqualTo(ServiceLifetime.Singleton));
 		}
 	}
 }

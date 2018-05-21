@@ -63,6 +63,12 @@ namespace IoC.Showcase.Testing
 			});
 			Assert.That(container.Model.HasRegistrationFor<Simpleton>(), Is.True);
 			Assert.That(container.Model.For<Simpleton>().Default.Lifetime, Is.EqualTo(ServiceLifetime.Singleton));
+			
+			System.Diagnostics.Debug.WriteLine(container.Model.For<Simpleton>().Default.GetBuildPlan());
+			System.Diagnostics.Debug.WriteLine(container.Model.For<I1>().Default.GetBuildPlan());
+			System.Diagnostics.Debug.WriteLine(container.Model.For<I2>().Default.GetBuildPlan());
 		}
+
+		
 	}
 }
